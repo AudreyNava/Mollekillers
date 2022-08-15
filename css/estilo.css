@@ -1,0 +1,25 @@
+<style>
+            /* Selector Universar */
+            body{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            
+            /* Selector por tag */
+            h1{
+                background-color: lavender;
+            }
+            /* Selector de clases */
+            .verde{
+                color: green;
+                font-weight: lighter;
+            }
+            /* selector de clase dentro de class */
+            ol.morado{
+                color: purple;
+            }
+            /* selector de pseudo clases */
+            ol:hover{
+                color: pink;
+            }
+            /* Selectores de ID */
+    </style>
