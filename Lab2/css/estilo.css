@@ -1,0 +1,52 @@
+
+            /* Selector Universar */
+            body{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            
+            /* Selector por tag */
+            h1{
+                background-color: blueviolet;
+            }
+            /* Selector de clases */
+            .verde{
+                color: green;
+                font-weight: lighter;
+            }
+            /* selector de clase dentro de class */
+            ol.morado{
+                color: purple;
+            }
+            /* selector de pseudo clases */
+            ol:hover{
+                color: pink;
+            }
+            /* Selectores de ID */
+
+
+
+            
+            body {
+                margin: 0 auto;
+                max-width: 50em;
+                line-height: 1.5;
+                padding: 4em 1em;
+              }
+            h2 {
+                margin-top: 1em;
+                padding-top: 1em;
+            }
+            code,
+            pre {
+            background: #eee;
+            }
+
+            code {
+            padding: 2px 4px;
+            vertical-align: text-bottom;
+            }
+
+            pre {
+            padding: 1em;
+            }
+            

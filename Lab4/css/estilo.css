@@ -1,0 +1,15 @@
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    line-height: 1.5;
+    padding: 4em 1em;
+  }
+
+h2 {
+    background-color: bisque;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+ol:hover{
+  color: pink;
+}

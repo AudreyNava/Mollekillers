@@ -1,0 +1,43 @@
+¿Cuál es la diferencia entre Internet y la World Wide Web?
+    Internet es una inmensa red de computadoras alrededor de todo el mundo conectadas entre sí.
+    En cambio, la web (la World Wide Web) es una enorme colección de páginas que se asienta sobreesa red de computadoras.
+    Así que cuando navegas a través de tu celular o computadora usas internet para acceder a la web.
+¿Cuáles son las partes de un URL?
+    La URL o Uniform Resource Locator se compone por 
+        -Protocolo de red: indica a la maquina que tipo de conexion debe realisar. Ejemplo: Http
+        - Servicio: Es el servicio de soporte de informacipon en Línea. Ejemplo: www2
+¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+    -GET
+        va en el encabezado, es libre, 
+    -HEAD
+    -POST
+    -PUT
+    -PATCH
+    -DELETE
+
+¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué? 
+    POST 
+¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+    GET
+Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? 
+    Significa que el código trabaja como se espera, "Todo esta bien". No hay error
+¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? 
+    Si, si es cuando el enlace desde nuestro lado se rompio 
+¿Por qué?
+    Puede ser un error de conexion de tu servidor.
+¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? 
+    Si
+¿Por qué?
+   HP defectuoso, o incluso la ruptura de la conexión a la base de datos. Es completamente nuestro error. 
+¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+ 5 separa el contenido y el comportamiento 
+
+¿Qué componentes de estructura y estilo tiene una tabla?
+    <table>
+        <tr>
+¿Cuáles son los principales controles de una forma HTML5?
+¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
+Sobre el ciclo de vida y desarrollo de los sistemas de información:
+¿Cuál es el ciclo de vida de los sistemas de información?
+¿Cuál es el ciclo de desarrollo de sistemas de información?
