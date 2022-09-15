@@ -4684,7 +4684,7 @@ select {
           transform: translateY(-50%);
   z-index: 10;
   padding: 1rem;
-  color: #fefefe; }
+  color: #c87c7c; }
   [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {
     outline: 0; }
   .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {
@@ -4708,12 +4708,12 @@ select {
     width: 1.2rem;
     height: 1.2rem;
     margin: 0.1rem;
-    border-radius: 50%;
-    background-color: #cacaca; }
+    border-radius: 45%;
+    background-color: #af89a1; }
     .orbit-bullets button:hover {
-      background-color: #8a8a8a; }
+      background-color: #af89a1; }
     .orbit-bullets button.is-active {
-      background-color: #8a8a8a; }
+      background-color: #f88dd1; }
 
 .pagination {
   margin-left: 0;

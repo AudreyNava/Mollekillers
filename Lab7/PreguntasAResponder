@@ -1,0 +1,5 @@
+Material design
+Is a web application that can help you to select a color palette, choosing the main colors of your brand in order of importance, after that the option colors will appear on the right side of the screen.
+Restrictions
+    The user cannot choose the same color two times. 
+    To unchoose a color the user needs to select colors again.
