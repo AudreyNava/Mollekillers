@@ -3404,7 +3404,7 @@ select {
     background-color: #d7ecfa;
     color: #0a0a0a; }
   .callout.secondary {
-    background-color: #eaeaea;
+    background-color: #d57c7c;
     color: #0a0a0a; }
   .callout.success {
     background-color: #e1faea;
@@ -4653,7 +4653,7 @@ select {
   overflow: hidden; }
 
 .orbit-slide {
-  width: 50%;
+  width: 75%;
   position: absolute; }
   .orbit-slide.no-motionui.is-active {
     top: 0;
