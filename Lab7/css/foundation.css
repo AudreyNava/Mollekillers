@@ -4653,7 +4653,7 @@ select {
   overflow: hidden; }
 
 .orbit-slide {
-  width: 100%;
+  width: 50%;
   position: absolute; }
   .orbit-slide.no-motionui.is-active {
     top: 0;
