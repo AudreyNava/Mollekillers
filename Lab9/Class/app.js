@@ -1,28 +1,28 @@
- const filesystem = require('fs');
- filesystem.writeFileSync('hola.txt', 'Hola desde Node');
-
- console.log("hola desde NodeConsole");
-
- setTimeout(() => {
-    console.log("ERROR: SYSTEM FAILURE");
-}, 20000);
-
 const filesystem = require('fs');
-filesystem.writeFileSync('hola.txt', 'Hola desde node');
+filesystem.writeFileSync('hola.txt', 'Hola desde Node');
 
+
+
+    setTimeout(() => {
+        
+        console.log("ERROR: SYSTEM FAILURE");
+    }, 20000);
 
 console.log("hola desde node");
 
 const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
 
+// Printear el arreglo
 for (let item of arreglo) {
     console.log(item);
 } 
 
+// Printear el lugar del arrego
 for (let item in arreglo) {
     console.log(item);
 } 
 
+// Printear el arreglo sorteado
 for (let item of arreglo) {
     setTimeout(() => {
         console.log(item);
