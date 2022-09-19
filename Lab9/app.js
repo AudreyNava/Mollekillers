@@ -10,20 +10,18 @@ const Readline = require('readline').createInterface({
 const createArray = (numeroos) => {
     let arr = new Array();
     for(let i = 0; i < numeroos.length; i++){
-        if(numeroos[i] != '10'){
-            console.log(numeroos[i]);
-            arr.push(numeroos[i] - 48)
-        }
-            
+     
+            arr.push(numeroos[i] - 48);
+     
     }
     return arr;
-    // const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
-    // let aux = 0;
-    // for(let i = 0; i < arreglo.length; i++){
-
-    //     aux += arreglo[i];
-    // }
-    // return aux/arreglo.length;
+}
+const promedioArreglo = (arr) => {
+    let acum = 0;
+    for(let i = 0; i < arr.length; i++){
+        acum += arr[i];
+    }
+    return acum/arr.length;
 }
 
 // Una función que reciba un string y escriba el string en un archivo de texto. Apóyate del módulo fs.
@@ -33,11 +31,26 @@ const CrearArchivo = () => {
     });
 }
 
+
+
 const main = async () => {
     await CrearArchivo();
 
-    let numeroos = filesystem.readFileSync('numeros.txt');
-    console.log ('El promedio de esos numeros es:' + createArray() );
+    let numeroos = filesystem.readFileSync('Numeros.txt');
+    arr = createArray(numeroos);
+    console.log ('El promedio de esos numeros es:' + promedioArreglo(arr) );
 }
 
 main();
+
+
+    const http = require('http');
+    const html = filesystem.readFileSync('../Lab7/index.html');
+    const server = http.createServer((request, response)=>{
+        console.log(request.url);
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html);
+        response.end();
+    });
+
+server.listen(3000);
