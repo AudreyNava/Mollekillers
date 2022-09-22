@@ -1,0 +1,19 @@
+{
+  "name": "lab12",
+  "version": "1.0.0",
+  "description": "Sesion de clase de DAW-BD",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudreyNava/Mollekillers.git"
+  },
+  "author": "AudreyNava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AudreyNava/Mollekillers/issues"
+  },
+  "homepage": "https://github.com/AudreyNava/Mollekillers#readme"
+}
