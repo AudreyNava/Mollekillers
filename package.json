@@ -1,0 +1,19 @@
+{
+  "name": "sesionesdaw",
+  "version": "1.0.0",
+  "description": "Sesiones de la case de DAW",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudreyNava/Mollekillers.git"
+  },
+  "author": "Audrey Nava",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AudreyNava/Mollekillers/issues"
+  },
+  "homepage": "https://github.com/AudreyNava/Mollekillers#readme"
+}
