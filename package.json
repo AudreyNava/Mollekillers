@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AudreyNava/Mollekillers/issues"
   },
-  "homepage": "https://github.com/AudreyNava/Mollekillers#readme"
+  "homepage": "https://github.com/AudreyNava/Mollekillers#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
