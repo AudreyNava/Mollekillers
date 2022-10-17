@@ -1,19 +1,20 @@
-console.log('Hola mundo');
-console.log('xd');
-
 //Para importar express
 const express = require('express');
-const app = express();
-
-//Utilizar carpeta de rutas
-const rutasRecomendaciones = require('./routes/recomendaciones');
-const rutasUsuario = require('./routes/usuario');
-
 //usar body parser
 const bodyParser = require('body-parser');
+//usar paths
+const path = require('path');
+
+const app = express();
+
+//configurar ejs
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+//carpeta public como estática
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
-
 
 //Middleware
 app.use((request, response, next) => {
@@ -21,16 +22,21 @@ app.use((request, response, next) => {
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.use('/usuario', rutasUsuario);
+//Utilizar rutas
+const rutasRecomendaciones = require('./routes/recomendaciones');
 app.use('/recomendaciones', rutasRecomendaciones);
 
+const rutasUsuario = require('./routes/usuario');
+app.use('/usuario', rutasUsuario);
+
+//rutas default
 app.get('/', (request, response, next) => {
     response.send('bienvenido tus recomendaciones'); //Manda la respuesta
 });
 app.use((request, response, next) => {
     console.log('Error 404');
     response.status(404);
-    response.send('No hay no existe'); //Manda la respuesta
+    response.sendFile(path.join(__dirname,'views', 'error.html'));; //Manda la respuesta
 });
 
 app.listen(3000);  

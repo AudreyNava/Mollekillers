@@ -1,14 +1,19 @@
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
 router.get('/nueva_recomendacion', (request, response, next) => {
-    response.send('<form action="nueva_recomendacion" method="POST"><input type="text" name="nombre"><input type="submit" name="enviar" value="guadar"></form>'); //Manda la respuesta
+    response.render(path.join('recomendaciones','nueva.ejs'));//Manda la respuesta
 });
 
 router.post('/nueva_recomendacion', (request, response, next) => {
     console.log(request.body);
     response.send('Gracias por recomendar: ' + request.body.nombre); //Manda la respuesta
 });
+
+router.get('/audrey', (request, response, next) => {
+        response.sendFile(path.join(__dirname, '..', 'previous',  'Lab7', 'index.html'));
+    });
 
 module.exports = router;
