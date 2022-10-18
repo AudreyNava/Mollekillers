@@ -1,11 +1,16 @@
 <%- include('../includes/head.ejs') %>
 
-<h1>Estos son tus recomendaciones</h1>
+<h1>Estas son tus recomendaciones</h1>
 <%= code_injection %>
-<ul>
-    <% for (let r of recomendaciones) { %>
-        <li><%= r %></li>
-    <% } %>
-</ul>
+<% if (recomendaciones.length > 0) { %>
+    <ul>
+        <% for (let r of recomendaciones) { %>
+            <li><%= r %></li>
+        <% } %>
+    </ul>
+<% } else { %>
+    <h2>No hay robots registrados.</h2>
+    <h3>No hay robots registrados.</h3>
+<% } %>
 
 <%- include('../includes/foot.ejs') %>

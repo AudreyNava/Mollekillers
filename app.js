@@ -23,10 +23,10 @@ app.use((request, response, next) => {
 });
 
 //Utilizar rutas
-const rutasRecomendaciones = require('./routes/recomendaciones');
+const rutasRecomendaciones = require('./routes/recomendaciones.routes');
 app.use('/recomendaciones', rutasRecomendaciones);
 
-const rutasUsuario = require('./routes/usuario');
+const rutasUsuario = require('./routes/usuario.routes');
 app.use('/usuario', rutasUsuario);
 
 //rutas default
