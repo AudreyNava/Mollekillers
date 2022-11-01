@@ -1,0 +1,21 @@
+<%- include('../includes/head.ejs') %>
+
+<h1>Estas son tus recomendaciones</h1>
+
+<% if (recomendaciones.length > 0) { %>
+<ul>
+    <% for (let r of recomendaciones) { %>
+        <%- include('card.ejs', {recomendacion: r}) %>
+    <% } %>
+</ul>
+<% } else { %>
+    <h2>No hay recomendaciones registradas.</h2>
+<% } %>
+
+<a href="/recomendaciones/nueva_recomendacion"><button class="button">Nueva Recomendación</button></a>
+
+<% if (ultimo_recomendacion != '') { %>
+    <p>La ultima recomendacion registrado fue: <%= ultimo_recomendacion %></p>
+<% } %>
+
+<%- include('../includes/foot.ejs') %>

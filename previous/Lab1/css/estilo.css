@@ -1,5 +1,5 @@
 
-            /* Selector Universar */
+        /*    /* Selector Universar */
             body{
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
@@ -7,6 +7,9 @@
             /* Selector por tag */
             h1{
                 background-color: blueviolet;
+            }
+            p{
+                color: pink;
             }
             /* Selector de clases */
             .verde{
@@ -49,4 +52,4 @@
             pre {
             padding: 1em;
             }
-            
+        
