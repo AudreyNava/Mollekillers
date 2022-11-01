@@ -4,6 +4,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 //usar paths
 const path = require('path');
+//usar cookies con cookie parser
+const cookieParser = require('cookie-parser');
+//usar sesiones
+const session = require('express-session');
 
 const app = express();
 
@@ -18,9 +22,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(bodyParser.json());
+//definir cookieparser
+app.use(cookieParser());
+
+app.use(session({
+    secret: 'aerfgtvythvyugt54cyh4yhyhy6h46yr5ky87br53tgc3g46gg', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
 //Middleware
 app.use((request, response, next) => {
-    console.log('Middleware!');
+    const clicks = Number(request.cookies.numero_clicks ? request.cookies.numero_clicks : 0) + 1;
+    console.log(request.cookies);
+    response.setHeader('Set-Cookie', 'numero_clicks=' + clicks);
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
@@ -35,6 +51,7 @@ app.use('/usuario', rutasUsuario);
 app.get('/', (request, response, next) => {
     response.send('bienvenido tus recomendaciones'); //Manda la respuesta
 });
+
 app.use((request, response, next) => {
     console.log('Error 404');
     response.status(404);

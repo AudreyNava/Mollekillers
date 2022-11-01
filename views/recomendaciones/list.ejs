@@ -12,4 +12,10 @@
     <h2>No hay recomendaciones registradas.</h2>
 <% } %>
 
+<a href="/recomendaciones/nueva_recomendacion"><button class="button">Nueva Recomendación</button></a>
+
+<% if (ultimo_recomendacion != '') { %>
+    <p>La ultima recomendacion registrado fue: <%= ultimo_recomendacion %></p>
+<% } %>
+
 <%- include('../includes/foot.ejs') %>

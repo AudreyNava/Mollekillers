@@ -1,4 +1,5 @@
 const express = require('express');
+const userController = require('../controlers/usuario.controller');
 
 const router = express.Router();
 
@@ -10,5 +11,5 @@ router.post('/nuevo_usuario', (request, response, next) => {
     console.log(request.body);
     response.send('Gracias por recomendar: ' + request.body.nombre); //Manda la respuesta
 });
-
+//router.get('/logout', userController.logout);
 module.exports = router;
