@@ -5,22 +5,19 @@
 <div class="field is-grouped is-grouped-right">
     <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
 </div>
-<!-- <div class="container"> -->
-    <!-- <div class="columns"> -->
-            <% if (recomendaciones.length > 0) { %>
-            
-                
+<div class="container">
+    <div class="columns is-multiline">
+            <% if (recomendaciones.length > 0) { %>              
                 <% for (let r of recomendaciones) { %>
-                    <!-- <div class="column is-3">  -->
+                    <div class="column is-one-quarter">
                     <%- include('card.ejs', {recomendacion: r}) %>
-                    <!-- </div> -->
+                    </div>
                 <% } %>
-            
             <% } else { %>
                 <h2 class="title is-large">No hay recomendaciones registradas.</h2>
             <% } %>
-    <!-- </div> -->
-<!-- </div> -->
+    </div>
+ </div> 
 
 <div class="field is-grouped is-grouped-right">
     <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
