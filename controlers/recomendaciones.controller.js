@@ -3,10 +3,10 @@ const path = require('path');
 const Recomendacion = require('../models/recomendaciones.model');
 
 exports.get_new = (request, response, next) => {
-    response.render(path.join('recomendaciones','nueva.ejs'));//Manda la respuesta
-    // response.render(path.join('recomendaciones','nueva.ejs'), {
-    //     info: '',
-    // }); 
+    //response.render(path.join('recomendaciones','nueva.ejs'));//Manda la respuesta
+    response.render(path.join('recomendaciones','nueva.ejs'), {
+        info: '',
+    }); 
 }
 
 exports.post_new = (request, response, next) => {
@@ -14,10 +14,13 @@ exports.post_new = (request, response, next) => {
     console.log(request.body);
     recomendacion.save()//Manda la respuesta
         .then( () => {
+            
             request.session.ultimo_recomendacion = recomendacion.nombre;
             request.session.info = "La ultima recomendación " + recomendacion.nombre + "fue creada exitosamente"
+            //Manda la cookie en el header
             response.setHeader('Set-Cookie', 'galleta_de_costco=chocolate');
             response.redirect('/recomendaciones/');
+
             console.log(recomendacion);
         }).catch( (error) => {
             console.log(error);

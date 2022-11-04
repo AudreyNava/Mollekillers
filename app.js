@@ -26,18 +26,22 @@ app.use(bodyParser.json());
 //definir cookieparser
 app.use(cookieParser());
 
+//Definir session
 app.use(session({
-    secret: 'aerfgtvythvyugt54cyh4yhyhy6h46yr5ky87br53tgc3g46gg', 
+    secret: 'aerfgtvythvyugt54cyh4yhyhy6h46yr5ky87br53tgc3g46gg', //Es la llave con la que se encriptan las 'Claves' de la sesion
     resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
 //Middleware
 app.use((request, response, next) => {
+
+    //Cookies en el middleware
     const clicks = Number(request.cookies.numero_clicks ? request.cookies.numero_clicks : 0) + 1;
     console.log(request.cookies);
     response.setHeader('Set-Cookie', 'numero_clicks=' + clicks);
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
+
 });
 
 //Utilizar rutas

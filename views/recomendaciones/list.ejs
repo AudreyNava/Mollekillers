@@ -1,18 +1,30 @@
 <%- include('../includes/head.ejs') %>
 
-<h1>Estas son tus recomendaciones</h1>
+<h1 class="title is-large">Estas son tus recomendaciones</h1>
 
-<% if (recomendaciones.length > 0) { %>
-<ul>
-    <% for (let r of recomendaciones) { %>
-        <%- include('card.ejs', {recomendacion: r}) %>
-    <% } %>
-</ul>
-<% } else { %>
-    <h2>No hay recomendaciones registradas.</h2>
-<% } %>
+<div class="field is-grouped is-grouped-right">
+    <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
+</div>
+<!-- <div class="container"> -->
+    <!-- <div class="columns"> -->
+            <% if (recomendaciones.length > 0) { %>
+            
+                
+                <% for (let r of recomendaciones) { %>
+                    <!-- <div class="column is-3">  -->
+                    <%- include('card.ejs', {recomendacion: r}) %>
+                    <!-- </div> -->
+                <% } %>
+            
+            <% } else { %>
+                <h2 class="title is-large">No hay recomendaciones registradas.</h2>
+            <% } %>
+    <!-- </div> -->
+<!-- </div> -->
 
-<a href="/recomendaciones/nueva_recomendacion"><button class="button">Nueva Recomendación</button></a>
+<div class="field is-grouped is-grouped-right">
+    <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
+</div>
 
 <% if (ultimo_recomendacion != '') { %>
     <p>La ultima recomendacion registrado fue: <%= ultimo_recomendacion %></p>

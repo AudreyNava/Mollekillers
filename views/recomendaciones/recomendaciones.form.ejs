@@ -1,17 +1,21 @@
-<h1>Registrar nueva recomendación</h1>
+<h1 class="title">Registrar nueva recomendación</h1>
 <form action="/recomendaciones/nueva_recomendacion" method="POST">
-    <label for="nombre">Recomendación: </label>
-    <input type="text" id="nombre" name="nombre">
+    <label class="label" for="nombre">Recomendación: </label>
+    <input type="text" id="nombre" name="nombre" class="input is-primary">
     <br>
     <br>
-    <label for="descripcion">Descripción de la recomendacion: </label>
-    <input type="text" id="descripcion" name="descripcion">
+    <label class="label" for="descripcion">Descripción de la recomendacion: </label>
+    <input type="text" id="descripcion" name="descripcion" class="input is-primary">
     <br>
     <br>
-    <label for="img">Imagen </label>
-    <input type="text" id="img" name="img">
+    <label class="label" for="img">Imagen </label>
+    <input type="text" id="img" name="img" class="input is-primary">
     <br>
     <br>
-    <input type="submit" id="enviar" name="enviar" value="Registrar">
-
+    <div class="field is-grouped is-grouped-centered">
+        <p class="control">
+            <input type="submit"  class="button is-primary">
+            <a href="/recomendaciones/" class="button is-light"> Cancelar</a>
+        </p>
+    </div>
 </form>
