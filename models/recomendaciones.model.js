@@ -25,4 +25,8 @@ module.exports = class Recomendacion {
     static fetchOne(id) {
         return db.execute('SELECT * FROM recomendacion WHERE id = ?', [id]);
     }
+
+    static find(valor_busqueda) {
+        return db.execute('SELECT * FROM recomendacion WHERE nombre LIKE ? OR descripcion LIKE ? ', ['%'+valor_busqueda+'%', '%'+valor_busqueda+'%']);
+    }
 }

@@ -32,7 +32,21 @@
 
 <script>
     accion_asincrona = () => {
-        console.log(document.getElementById('buscar').value);
+        let valor_busqueda = document.getElementById('buscar').value;
+        //función que manda la petición asíncrona
+        fetch('/recomendaciones/buscar/' + valor_busqueda, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(result => {
+            return result.json(); //Regresa otra promesa
+        }).then(data => {
+            //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        });
     }
     document.getElementById('buscar').onkeyup = accion_asincrona;
 </script>
