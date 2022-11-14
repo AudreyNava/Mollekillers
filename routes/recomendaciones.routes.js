@@ -9,7 +9,7 @@ router.post('/nueva_recomendacion', recomendacionesController.post_new);
 
 router.get('/:recomendacions_id', recomendacionesController.get_one);
 
-router.get('/buscar/:valor_busqueda', robotsController.get_buscar);
+router.get('/buscar/:valor_busqueda', recomendacionesController.get_buscar);
 
 router.get('/', recomendacionesController.get_root);
 
