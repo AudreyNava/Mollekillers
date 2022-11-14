@@ -1,9 +1,12 @@
 <%- include('../includes/head.ejs') %>
 
 <h1 class="title is-large">Estas son tus recomendaciones</h1>
-
-<div class="field is-grouped is-grouped-right">
-    <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
+<div class="container">
+    <div class="field is-grouped is-grouped-right">
+        <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
+    </div>
+    <p>Buscar</p>
+    <input class="input is-normal" type="text" placeholder="Buscar"><button class="button is-primary">Buscar</button>
 </div>
 <div class="container">
     <div class="columns is-multiline">
@@ -26,5 +29,12 @@
 <% if (ultimo_recomendacion != '') { %>
     <p>La ultima recomendacion registrado fue: <%= ultimo_recomendacion %></p>
 <% } %>
+
+<script>
+    accion_asincrona = () => {
+        console.log(document.getElementById('buscar').value);
+    }
+    document.getElementById('buscar').onkeyup = accion_asincrona;
+</script>
 
 <%- include('../includes/foot.ejs') %>
