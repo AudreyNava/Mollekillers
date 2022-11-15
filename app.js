@@ -33,17 +33,6 @@ app.use(session({
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
-//Middleware
-app.use((request, response, next) => {
-
-    //Cookies en el middleware
-    const clicks = Number(request.cookies.numero_clicks ? request.cookies.numero_clicks : 0) + 1;
-    console.log(request.cookies);
-    response.setHeader('Set-Cookie', 'numero_clicks=' + clicks);
-    next(); //Le permite a la petición avanzar hacia el siguiente middleware
-
-});
-
 //Utilizar rutas
 const rutasRecomendaciones = require('./routes/recomendaciones.routes');
 app.use('/recomendaciones', rutasRecomendaciones);

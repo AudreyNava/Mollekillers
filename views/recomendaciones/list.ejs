@@ -6,11 +6,11 @@
         <a href="/recomendaciones/nueva_recomendacion"><button class="button is-primary">Nueva Recomendación</button></a>
     </div>
     <p>Buscar</p>
-    <input class="input is-normal" type="text" placeholder="Buscar"><button class="button is-primary">Buscar</button>
+    <input id="buscar" class="input is-normal" type="text" placeholder="Buscar"><button class="button is-primary">Buscar</button>
 </div>
-<div class="container">
-    <div class="columns is-multiline">
-        <div id="resultados">
+<div id="resultados">
+    <div class="container">
+        <div class="columns is-multiline">
             <% if (recomendaciones.length > 0) { %>              
                 <% for (let r of recomendaciones) { %>
                     <div class="column is-one-quarter">
@@ -48,40 +48,45 @@
             //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
             console.log(data);
             let html = '';
-            if (data.length > 0) { 
-                    for (let recomendacion of data) { 
-                        html += 
-                        html += '<div class="column is-one-quarter">';
-                        html += '<div class="card">';
-                        html += '<div class="card-image">';
+            html += '<div class="container">';
+    html += '<div class="columns is-multiline">';
+    if (data.length > 0) { 
+        for (let recomendacion of data) { 
+            html += '<div class="column is-one-quarter">';
+                html += '<div class="card">';
+                    html += '<div class="card-image">';
                         html += '<figure class="image" >';
-                        html += '<img src="'+ recomendacion.img + '" alt="Placeholder image" >';
+                            html += '<img src="'+ recomendacion.img + '" alt="Placeholder image" >';
                         html += '</figure>';
+                    html += '</div>';
+
+                    html += '<div class="card-content">';
+                        html += '<div class="media">';
+                            html += '<div class="media-left">';
+                                html += '<figure class="image is-48x48">';
+                                    html += '<img src="https://images.vexels.com/media/users/3/153232/isolated/preview/c3bcb676107e330558ccc68f8e1cf7d5-icono-plano-del-reproductor-de-peliculas.png" alt="Placeholder image" > ';
+                                html += '</figure>';
+                            html += '</div>';
+                        
+                            html += '<div class="media-content">';
+                                html += '<p class="title is-4">' + recomendacion.nombre + '</p>';
+                                html += '<p class="subtitle is-6"> </p>';
+                            html += '</div>';
                         html += '</div>';
 
-                        html += '<div class="card-content">';
-                        html += '<div class="media">';
-                        html += '<div class="media-left">';
-                        html += '<figure class="image is-48x48">';
-                        html += '<img src="https://images.vexels.com/media/users/3/153232/isolated/preview/c3bcb676107e330558ccc68f8e1cf7d5-icono-plano-del-reproductor-de-peliculas.png" alt="Placeholder image" > ';
-                        html += '</figure>';
-                        html += '</div>';
-                        html += '<div class="media-content">';
-                        html += '<p class="title is-4">' + recomendacion.nombre + '</p>';
-                        html += '<p class="subtitle is-6"> </p>';
-                        html += '</div>';
-                        html += '</div>';
                         html += '<div class="content">';
-                        html += '' + recomendacion.descripcion + '';
-                        html += '<p><a href="/recomendaciones/edit/' +  recomendacion.id + '"> Editar</a></p>';
-                        html += '<br>';
+                            html += '' + recomendacion.descripcion + '';
+                            html += '<p><a href="/recomendaciones/edit/'+recomendacion.id +'"> Editar</a></p>';
                         html += '</div>';
-                        html += '</div>';
-                    } 
+                    html += '</div>';
                 html += '</div>';
-            } else { 
-                html += '<h3>No hay recomendaciones registradas.</h3>';
-            } 
+            html += '</div>';
+        } 
+    } else { 
+        html += '<h3>No hay recomendaciones registradas.</h3>';
+    } 
+    html += '</div>';
+    html += '</div>';
             document.getElementById('resultados').innerHTML = html;
         }).catch(err => {
             console.log(err);
